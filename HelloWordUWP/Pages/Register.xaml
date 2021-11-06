@@ -1,0 +1,39 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWordUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    x:Class="HelloWordUWP.Pages.Register"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="562" Width="1318">
+    <ScrollViewer>
+        <StackPanel Width="655" HorizontalAlignment="Center">
+            <TextBlock Text="Register" Margin="20 10 0 0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBox x:Name="studentId" PlaceholderText="Please enter student Id" Header="Id Student" Width="170" HorizontalAlignment="Left" Margin="20 0 20 0"/>
+            <StackPanel Orientation="Horizontal" Margin="20 10 0 0">
+                <TextBox x:Name="firstName" PlaceholderText="Please enter your first name" Header="First name" Width="300" Margin="0 0 20 0"/>
+                <TextBox x:Name="lastName" PlaceholderText="Please enter your last name" Header="Last name" Width="300"/>
+            </StackPanel>
+
+            <StackPanel Margin="20 0 0 10" Width="620" Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox x:Name="address" Header="Address" Width="300" PlaceholderText="Please enter your address" Margin="0 10 20 0"/>
+                <TextBox x:Name="phone" Header="Phone" Width="300" PlaceholderText="Please enter your phone" Margin="0 10 0 0"/>
+            </StackPanel>
+
+            <StackPanel Margin="20 0 0 10" Width="620" Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox x:Name="avatar" Header="Avatar" PlaceholderText="Please enter your avatar" HorizontalAlignment="Left" Width="300" Margin="0 10 20 0"/>
+                <TextBox x:Name="email" Header="Email" PlaceholderText="Please enter your email" Width="300" HorizontalAlignment="Left" Margin="0 10 0 0"/>
+            </StackPanel>
+
+            <StackPanel Margin="20 20 0 0" Orientation="Horizontal">
+                <Button Content="Submit" Width="100" Margin="0 0 20 0" Click="Btn_Save"/>
+                <Button Content="Update" Width="100" Margin="0 0 20 0" Click="Btn_Update"/>
+                <Button Content="Delete" Width="100" Margin="0 0 20 0" Click="Btn_Delete"/>
+                <Button Content="Reset" Width="100"/>
+            </StackPanel>
+            <ListView x:Name="listStudent" Margin="20 10 0 0" Width="600" Height="100"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
