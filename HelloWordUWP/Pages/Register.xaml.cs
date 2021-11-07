@@ -42,7 +42,7 @@ namespace HelloWordUWP.Pages
             var InserCommand = "INSERT INTO `students`(`student_id`, `firstName`, `lastName`, `address`, `phone`, `avatar`, `email`) " +
                 "VALUES ('"+studentId.Text+ "','" + firstName.Text + "','" + lastName.Text + "','" + address.Text + "','" + phone.Text + "','" + avatar.Text + "','" + email.Text + "')";
             connection.Open();            
-            cmd = new MySqlCommand(InserCommand, connection);
+            cmd = new MySqlCommand(InserCommand, connection);            
             cmd.ExecuteNonQuery();
             connection.Close();
             displayData();
@@ -54,14 +54,14 @@ namespace HelloWordUWP.Pages
             adpt = new MySqlDataAdapter("SELECT * FROM students", connection);
             dt = new DataTable();
             adpt.Fill(dt);
-            for(var i = 0; i < dt.Columns.Count; i++)
+           /* for(var i = 0; i < dt.Columns.Count; i++)
             {
                 ListViewItem listViewItem = new ListViewItem(dt.Rows[i][0].ToString());
                 for(var j = 0; j < dt.Columns.Count; j++)
                 {
 
                 }
-            }
+            }*/
             connection.Close();
             
         }
@@ -86,6 +86,15 @@ namespace HelloWordUWP.Pages
         {
 
         }
-       
+
+        private void HyperLogin(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Login));
+        }
+
+        private void HyperMenu(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Menu));
+        }
     }
 }

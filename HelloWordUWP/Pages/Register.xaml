@@ -33,7 +33,10 @@
                 <Button Content="Delete" Width="100" Margin="0 0 20 0" Click="Btn_Delete"/>
                 <Button Content="Reset" Width="100"/>
             </StackPanel>
-            <ListView x:Name="listStudent" Margin="20 10 0 0" Width="600" Height="100"/>
+            <StackPanel Margin="20 10 20 0">
+                <HyperlinkButton Content="Login" Click="HyperLogin"/>
+                <HyperlinkButton Content="Menu" Click="HyperMenu" />
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </Page>

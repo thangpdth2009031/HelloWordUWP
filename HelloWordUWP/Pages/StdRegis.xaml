@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="HelloWordUWP.Pages.StdRegis"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWordUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" Margin="0,45,0,0" Text="Register Student" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="162" FontSize="20" FontWeight="Bold"/>
+            <StackPanel Width="700" HorizontalAlignment="Center">
+                <TextBlock x:Name="thongbao" Text="" HorizontalAlignment="Left" Margin="20 ,10 ,0,0"  Height="41" Width="314"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="rollnumber" HorizontalAlignment="Left" Margin="10 ,10 ,0,0"  Height="41" Width="314" PlaceholderText="Please enter rollnumber"/>
+                    <TextBox x:Name="fullname" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter fullname"/>
+                </StackPanel> <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="email" HorizontalAlignment="Left" Margin="10,10,0,0"  Height="41" Width="314" PlaceholderText="Please enter email"/>
+                    <TextBox x:Name="address" HorizontalAlignment="Left" Margin="10,10,0,0"  Height="41" Width="314" PlaceholderText="Please enter address"/>
+                </StackPanel> <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="avatar" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter avatar"/>
+                    <TextBox x:Name="birthday" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter birthday"/>
+                </StackPanel> <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="createdAt" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter createdAt"/>
+                    <TextBox x:Name="updatedAt" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter updatedAt"/>
+                </StackPanel> <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="gender" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter gender"/>
+                <TextBox x:Name="phone" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter phone"/>
+                </StackPanel> <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="status" HorizontalAlignment="Left" Margin="10,10,0,0" Height="41" Width="314" PlaceholderText="Please enter status"/>   </StackPanel>
+                 
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Width="600" Orientation="Horizontal">
+                <Button x:Name="btnSaveStd" Content="Save" Height="35" Width="76" Margin="0 20 10 20" Click="btnSaveStd_Click"/>
+                <Button x:Name="btnListStd" Content="List" Height="35" Width="76" Margin="0 20 10 20" Click="btnListStd_Click"/>
+                <Button x:Name="btnUpdateStd" Content="Update" Height="35" Width="76" Margin="0 20 10 20" Click="btnUpdateStd_Click"/>
+                <Button x:Name="btnDeleteStd" Content="Delete" Height="35" Width="76" Margin="0 20 10 20" Click="btnDeleteStd_Click"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Width="600">
+                <ListView x:Name="ListViewStudent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsDoubleTapEnabled="False" DoubleTapped="ListViewStudent_DoubleTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock >
+                            <Run Text="{Binding RollNumber}"></Run>
+                            <Run Text="{Binding FullName}"></Run>
+                            <Run Text="{Binding Address}"></Run>
+                            <Run Text="{Binding Avatar}"></Run>                                    
+                            <Run Text="{Binding Birthday}"></Run>
+                                    <LineBreak/>
+                            <Run Text="{Binding CreatedAt}"></Run>
+                            <Run Text="{Binding UpdatedAt}"></Run>                                
+                            <Run Text="{Binding Gender}"></Run>
+                            <Run Text="{Binding Phone}"></Run>
+                            <Run Text="{Binding Status}"></Run>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
